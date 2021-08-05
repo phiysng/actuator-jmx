@@ -1,4 +1,4 @@
-package io.shield.squareajax;
+package io.shield.squareajax.mapper;
 
 import org.springframework.stereotype.Component;
 
