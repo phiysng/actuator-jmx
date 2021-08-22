@@ -13,6 +13,15 @@ public enum MessageProtocal {
 		this.name = name;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public long getNumber() {
+		return number;
+	}
+
+	
 	
 	private final long number;
 	private final String name;

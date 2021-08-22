@@ -23,7 +23,7 @@ public class GtkAction {
 
 	@ZPath(protocal = MessageProtocal.BUY)
 	public void buy(Long roleId){
-		SkyScrren skyScrren = SkyScrren.Builder.build();
+		SkyScreen.SkyScrren skyScrren = SkyScreen.SkyScrren.newBuilder().setPriority(5).setMsg("Hello Broadcast Message").build();
 		log.error("{}", skyScrren);
 	}
 }
