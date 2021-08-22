@@ -2,7 +2,11 @@ syntax = "proto3";
 
 package github.phiysng.io.shield;
 
-message SkyScrren{
+message SkyScreen{
 	int32 priority = 1;
 	string msg = 2; // message obtained
+}
+
+message ThunderSkyScreen{
+	SkyScreen skyScreen = 1;
 }

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package github.phiysng.io.shield;
+
+message IntData{
+    int32 int = 1;
+}
+
+message LongData{
+    int64 long = 1;
+}
