@@ -6,7 +6,7 @@ package io.shield.squareajax.action;
 import io.shield.squareajax.annotation.ZPath;
 import io.shield.squareajax.constant.MessageProtocal;
 import lombok.extern.slf4j.Slf4j;
-
+import github.phiysng.io.shield.SkyScreen;
 
 @Slf4j
 public class GtkAction {
@@ -18,6 +18,12 @@ public class GtkAction {
 	
 	@ZPath(protocal = MessageProtocal.LOGOUT)
 	public void logout(long roleId) {
-		log.error("登出操作");
+		log.error("logout operation end..");
+	}
+
+	@ZPath(protocal = MessageProtocal.BUY)
+	public void buy(Long roleId){
+		SkyScrren skyScrren = SkyScrren.Builder.build();
+		log.error("{}", skyScrren);
 	}
 }

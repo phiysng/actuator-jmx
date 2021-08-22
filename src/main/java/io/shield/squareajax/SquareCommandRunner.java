@@ -5,6 +5,12 @@ import org.springframework.context.annotation.Configuration;
 
 import lombok.extern.slf4j.Slf4j;
 
+
+/**
+ * @since version 1.0.0		
+ * @author wyshou
+ * a simple and dumb command runner.
+ */
 @Slf4j
 @Configuration
 public class SquareCommandRunner implements CommandLineRunner {
@@ -13,5 +19,4 @@ public class SquareCommandRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		log.error("Hello From Commandline Runner");
 	}
-
 }

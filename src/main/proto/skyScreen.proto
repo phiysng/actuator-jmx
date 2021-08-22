@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package github.phiysng.io.shield;
+
+message SkyScrren{
+	int32 priority = 1;
+	string msg = 2; // message obtained
+}
