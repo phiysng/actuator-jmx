@@ -9,4 +9,6 @@ message SkyScreen{
 
 message ThunderSkyScreen{
 	SkyScreen skyScreen = 1;
+	int64 id = 2;
+	map<int64 ,int64> kateMap  =3;
 }
