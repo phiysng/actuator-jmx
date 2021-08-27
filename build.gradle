@@ -28,6 +28,15 @@ configurations {
 	}
 }
 
+sourceSets {
+  main {
+    java {
+      srcDirs 'src/main/java'
+      srcDirs 'build/generated/source/proto/main/java'
+    }
+  }
+}
+
 protobuf {
     // Configure the protoc executable
     protoc {
@@ -35,6 +44,7 @@ protobuf {
         artifact = 'com.google.protobuf:protoc:3.0.0'
     }
 }
+
 
 
 repositories {
