@@ -14,7 +14,7 @@ import github.phiysng.io.shield.SkyScreenOuterClass.ThunderSkyScreen;
 @Slf4j
 public class GtkAction {
 
-	@ZPath(protocal = MessageProtocal.LOGIN)
+	@ZPath(protocal = MessageProtocal.LOGIN , sync = true)
 	public void login(LongData longData) {
 		log.info("login operation end...");
 	}
