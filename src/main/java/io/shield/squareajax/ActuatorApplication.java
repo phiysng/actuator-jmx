@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @SpringBootApplication
-public class DemoApplication {
+public class ActuatorApplication {
 
 	@Autowired
 	private List<IMapper> mapper;
@@ -31,7 +31,7 @@ public class DemoApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(ActuatorApplication.class, args);
 	}
 
 }
