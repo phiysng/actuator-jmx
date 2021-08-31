@@ -9,15 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 public class LogInterceptor implements HandlerInterceptor {
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        UUID uuid = UUID.randomUUID();
-        MDC.put("requestId" , String.valueOf(uuid));
-        return true;
-    }
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		UUID uuid = UUID.randomUUID();
+		MDC.put("requestId", String.valueOf(uuid));
+		return true;
+	}
 
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        MDC.clear();
-    }
+	@Override
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
+			ModelAndView modelAndView) throws Exception {
+		MDC.clear();
+	}
 }

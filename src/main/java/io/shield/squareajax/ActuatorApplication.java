@@ -32,7 +32,7 @@ public class ActuatorApplication implements WebMvcConfigurer {
 
 	@GetMapping("/hello/{id}")
 	public String helloId(@PathVariable("id") Long id, @RequestParam(value = "name", required = false) String name) {
-		log.info("当前获得的请求参数为 id:{} name:{} mapper:{}", id , name , mapper);
+		log.info("当前获得的请求参数为 id:{} name:{} mapper:{}", id, name, mapper);
 		log.warn("球队对应的枚举为 : {} {} {}", FC.getFC(name), FC.getFC(name).getName(), FC.getFC(name).getTrophy());
 
 		return "hello world from : " + id;

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package github.phiysng.io.shield;
+package io.shield.squareajax.proto;
 
 message IntData{
     int32 int = 1;

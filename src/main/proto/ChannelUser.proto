@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package github.phiysng.io.shield;
+package io.shield.squareajax.proto;
 
 import "skyScreen.proto";
 

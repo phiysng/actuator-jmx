@@ -5,23 +5,23 @@ package io.shield.squareajax.action;
 
 import io.shield.squareajax.annotation.ZPath;
 import io.shield.squareajax.constant.MessageProtocal;
+import io.shield.squareajax.proto.Datas.IntData;
+import io.shield.squareajax.proto.Datas.LongData;
+import io.shield.squareajax.proto.SkyScreenOuterClass.SkyScreen;
+import io.shield.squareajax.proto.SkyScreenOuterClass.ThunderSkyScreen;
 import lombok.extern.slf4j.Slf4j;
-import github.phiysng.io.shield.Datas.IntData;
-import github.phiysng.io.shield.Datas.LongData;
-import github.phiysng.io.shield.SkyScreenOuterClass.SkyScreen;
-import github.phiysng.io.shield.SkyScreenOuterClass.ThunderSkyScreen;
 
 @Slf4j
 public class GtkAction {
 
-	@ZPath(protocal = MessageProtocal.LOGIN , sync = true)
+	@ZPath(protocal = MessageProtocal.LOGIN, sync = true)
 	public void login(LongData longData) {
 		log.info("login operation end...");
 	}
 
 	@ZPath(protocal = MessageProtocal.LOGOUT)
 	public void logout(LongData longData) {
-		log.error("logout operation end.. roleId = {}" , longData.getLong());
+		log.error("logout operation end.. roleId = {}", longData.getLong());
 	}
 
 	@ZPath(protocal = MessageProtocal.BUY)
