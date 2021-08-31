@@ -2,6 +2,7 @@ package io.shield.squareajax.controller;
 
 import github.phiysng.io.shield.SkyScreenOuterClass.SkyScreen;
 import github.phiysng.io.shield.SkyScreenOuterClass.ThunderSkyScreen;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 import java.util.stream.LongStream;
 
+@Slf4j
 @RestController
 public class ProtoControllere {
     @GetMapping("/proto/")
@@ -26,6 +28,7 @@ public class ProtoControllere {
             thunderSkyScreenBuilder.putKateMap(i, i * 10);
         });
 
+        log.info("response : {}" , thunderSkyScreenBuilder.toString());
         return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(thunderSkyScreenBuilder.build().toByteArray());
     }

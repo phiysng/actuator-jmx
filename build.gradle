@@ -57,14 +57,21 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
-	
+
 	// protobuf related packages.
 	implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.17.3'
     implementation group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.17.3'
 
     implementation 'com.google.protobuf:protobuf-gradle-plugin:0.8.17'
-    
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // mapstruct
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+    testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final' // if you are using mapstruct in test code
+
 }
 
 test {

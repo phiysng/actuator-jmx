@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package github.phiysng.io.shield;
+
+import "skyScreen.proto";
+
+message ChannelUser{
+  int64 roleId = 1;
+  string wdId = 2;
+  int64 channel = 3;
+  int64 subChannel = 4;
+  repeated SkyScreen skyScreen = 5;
+}
