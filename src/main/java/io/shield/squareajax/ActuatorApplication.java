@@ -2,6 +2,7 @@ package io.shield.squareajax;
 
 import java.util.List;
 
+import io.shield.squareajax.interceptors.LogInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,14 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 import io.shield.squareajax.constant.FC;
 import io.shield.squareajax.mapper.IMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Slf4j
 @RestController
 @SpringBootApplication
-public class ActuatorApplication {
+public class ActuatorApplication implements WebMvcConfigurer {
 
 	@Autowired
 	private List<IMapper> mapper;
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(new LogInterceptor());
+	}
 
 	@GetMapping("/hello/{id}")
 	public String helloId(@PathVariable("id") Long id, @RequestParam(value = "name", required = false) String name) {

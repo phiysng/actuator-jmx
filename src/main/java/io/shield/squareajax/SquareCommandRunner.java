@@ -17,6 +17,6 @@ public class SquareCommandRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		log.error("Hello From Commandline Runner");
+		log.info("Hello From Commandline Runner");
 	}
 }

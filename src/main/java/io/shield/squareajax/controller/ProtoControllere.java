@@ -15,8 +15,8 @@ import java.util.stream.LongStream;
 @Slf4j
 @RestController
 public class ProtoControllere {
-    @GetMapping("/proto/")
-    public ResponseEntity<byte[]> handleProtoRequest() {
+    @GetMapping("/proto/decode")
+    public ResponseEntity<String> handleProtoRequest() {
         SkyScreen skyScrren = SkyScreen.newBuilder().build();
         ThunderSkyScreen.Builder thunderSkyScreenBuilder = ThunderSkyScreen.newBuilder()
                 .setSkyScreen(skyScrren).setId(1001);
@@ -28,8 +28,8 @@ public class ProtoControllere {
             thunderSkyScreenBuilder.putKateMap(i, i * 10);
         });
 
-        log.info("response : {}" , thunderSkyScreenBuilder.toString());
-        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .body(thunderSkyScreenBuilder.build().toByteArray());
+        log.info("response : {}" , thunderSkyScreenBuilder);
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.TEXT_PLAIN)
+                .body(thunderSkyScreenBuilder.build().toString());
     }
 }
