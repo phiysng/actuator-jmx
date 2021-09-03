@@ -14,17 +14,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GtkAction {
 
-	@ZPath(protocal = MessageProtocal.LOGIN, sync = true)
+	@ZPath(protocol = MessageProtocal.LOGIN, sync = true)
 	public void login(LongData longData) {
 		log.info("login operation end...");
 	}
 
-	@ZPath(protocal = MessageProtocal.LOGOUT)
+	@ZPath(protocol = MessageProtocal.LOGOUT)
 	public void logout(LongData longData) {
 		log.error("logout operation end.. roleId = {}", longData.getLong());
 	}
 
-	@ZPath(protocal = MessageProtocal.BUY)
+	@ZPath(protocol = MessageProtocal.BUY)
 	public void buy(LongData longData, IntData number) {
 		SkyScreen skyScrren = SkyScreen.newBuilder().setPriority(5).setMsg("Hello Broadcast Message").build();
 		ThunderSkyScreen thunderSkyScreen = ThunderSkyScreen.newBuilder().setSkyScreen(skyScrren).build();

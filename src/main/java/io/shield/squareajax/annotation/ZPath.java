@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public @interface ZPath {
 
-	public MessageProtocal protocal();
+	public MessageProtocal protocol();
 
 	public boolean sync() default false;
 }
